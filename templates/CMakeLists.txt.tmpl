@@ -1,0 +1,8 @@
+{# templates/CMakeLists.txt.tmpl #}
+cmake_minimum_required(VERSION {{ cmake_version }})
+project({{ project }} CXX)
+set(CXX_STANDARD {{ cxx_standard }})
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+include_directories(${PROJECT_SOURCE_DIR}/inc)
+file(GLOB SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+add_executable({{ project  }} ${SRC_FILES})
